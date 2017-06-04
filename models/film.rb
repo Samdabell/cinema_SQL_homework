@@ -32,6 +32,10 @@ class Film
     tickets.map { |ticket_hash| Ticket.new(ticket_hash).customer}
   end
 
+  def customer_check
+    return customers.count
+  end
+
   def self.all
     sql = "SELECT * FROM films;"
     films = SqlRunner.run(sql)
